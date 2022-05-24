@@ -40,7 +40,7 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class Moderators {
 
-    protected List<Moderator> moderator;
+    protected List<MigrationModerator> moderator;
 
     /**
      * Gets the value of the moderator property.
@@ -60,13 +60,13 @@ public class Moderators {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Moderator }
+     * {@link MigrationModerator }
      * 
      * 
      */
-    public List<Moderator> getModerator() {
+    public List<MigrationModerator> getModerator() {
         if (moderator == null) {
-            moderator = new ArrayList<Moderator>();
+            moderator = new ArrayList<MigrationModerator>();
         }
         return this.moderator;
     }

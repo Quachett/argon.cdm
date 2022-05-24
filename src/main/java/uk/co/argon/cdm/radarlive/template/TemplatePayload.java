@@ -8,6 +8,9 @@
 
 package uk.co.argon.cdm.radarlive.template;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -33,7 +36,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="requestedTime" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *         &lt;element name="listOfSections" type="{http://synapse.ominsure.co.za/webservice}Sections" minOccurs="0"/&gt;
  *         &lt;element name="listOfModerators" type="{http://synapse.ominsure.co.za/webservice}Moderators" minOccurs="0"/&gt;
- *         &lt;element name="statusOfDeployment" type="{http://synapse.ominsure.co.za/webservice}DeploymentStatus"/&gt;
+ *         &lt;element name="statusOfDeployment" type="{http://synapse.ominsure.co.za/webservice}String"/&gt;
  *         &lt;element name="errorMessage" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
@@ -59,18 +62,18 @@ import javax.xml.bind.annotation.XmlType;
 public class TemplatePayload {
 
     protected long requestId;
-    protected long crReference;
+    protected String crReference;
     @XmlElement(name = "Requestor")
-    protected long requestor;
+    protected String requestor;
     @XmlElement(name = "Approver")
-    protected long approver;
-    protected long destinationEnvironment;
-    protected long requestedTime;
-    protected Sections listOfSections;
-    protected Moderators listOfModerators;
+    protected String approver;
+    protected String destinationEnvironment;
+    protected String requestedTime;
+    protected List<uk.co.argon.cdm.radarlive.scribe.migration.MigrationSection> sections;
+    protected List<uk.co.argon.cdm.radarlive.scribe.migration.MigrationModerator> moderators;
     @XmlElement(required = true)
     @XmlSchemaType(name = "string")
-    protected DeploymentStatus statusOfDeployment;
+    protected String statusOfDeployment;
     protected String errorMessage;
 
     /**
@@ -93,7 +96,7 @@ public class TemplatePayload {
      * Gets the value of the crReference property.
      * 
      */
-    public long getCrReference() {
+    public String getCrReference() {
         return crReference;
     }
 
@@ -101,7 +104,7 @@ public class TemplatePayload {
      * Sets the value of the crReference property.
      * 
      */
-    public void setCrReference(long value) {
+    public void setCrReference(String value) {
         this.crReference = value;
     }
 
@@ -109,7 +112,7 @@ public class TemplatePayload {
      * Gets the value of the requestor property.
      * 
      */
-    public long getRequestor() {
+    public String getRequestor() {
         return requestor;
     }
 
@@ -117,7 +120,7 @@ public class TemplatePayload {
      * Sets the value of the requestor property.
      * 
      */
-    public void setRequestor(long value) {
+    public void setRequestor(String value) {
         this.requestor = value;
     }
 
@@ -125,7 +128,7 @@ public class TemplatePayload {
      * Gets the value of the approver property.
      * 
      */
-    public long getApprover() {
+    public String getApprover() {
         return approver;
     }
 
@@ -133,7 +136,7 @@ public class TemplatePayload {
      * Sets the value of the approver property.
      * 
      */
-    public void setApprover(long value) {
+    public void setApprover(String value) {
         this.approver = value;
     }
 
@@ -141,7 +144,7 @@ public class TemplatePayload {
      * Gets the value of the destinationEnvironment property.
      * 
      */
-    public long getDestinationEnvironment() {
+    public String getDestinationEnvironment() {
         return destinationEnvironment;
     }
 
@@ -149,7 +152,7 @@ public class TemplatePayload {
      * Sets the value of the destinationEnvironment property.
      * 
      */
-    public void setDestinationEnvironment(long value) {
+    public void setDestinationEnvironment(String value) {
         this.destinationEnvironment = value;
     }
 
@@ -157,7 +160,7 @@ public class TemplatePayload {
      * Gets the value of the requestedTime property.
      * 
      */
-    public long getRequestedTime() {
+    public String getRequestedTime() {
         return requestedTime;
     }
 
@@ -165,20 +168,16 @@ public class TemplatePayload {
      * Sets the value of the requestedTime property.
      * 
      */
-    public void setRequestedTime(long value) {
+    public void setRequestedTime(String value) {
         this.requestedTime = value;
     }
 
-    /**
-     * Gets the value of the listOfSections property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Sections }
-     *     
-     */
-    public Sections getListOfSections() {
-        return listOfSections;
+
+    public List<uk.co.argon.cdm.radarlive.scribe.migration.MigrationSection> getSections() {
+        if (sections == null) {
+            sections = new ArrayList<uk.co.argon.cdm.radarlive.scribe.migration.MigrationSection>();
+        }
+        return this.sections;
     }
 
     /**
@@ -189,8 +188,8 @@ public class TemplatePayload {
      *     {@link Sections }
      *     
      */
-    public void setListOfSections(Sections value) {
-        this.listOfSections = value;
+    public void setSections(List<uk.co.argon.cdm.radarlive.scribe.migration.MigrationSection> sections) {
+        this.sections = sections;
     }
 
     /**
@@ -201,8 +200,12 @@ public class TemplatePayload {
      *     {@link Moderators }
      *     
      */
-    public Moderators getListOfModerators() {
-        return listOfModerators;
+
+    public List<uk.co.argon.cdm.radarlive.scribe.migration.MigrationModerator> getModerators() {
+        if (moderators == null) {
+            moderators = new ArrayList<uk.co.argon.cdm.radarlive.scribe.migration.MigrationModerator>();
+        }
+        return this.moderators;
     }
 
     /**
@@ -213,8 +216,8 @@ public class TemplatePayload {
      *     {@link Moderators }
      *     
      */
-    public void setListOfModerators(Moderators value) {
-        this.listOfModerators = value;
+    public void setModerators(List<uk.co.argon.cdm.radarlive.scribe.migration.MigrationModerator> value) {
+        this.moderators = value;
     }
 
     /**
@@ -222,10 +225,10 @@ public class TemplatePayload {
      * 
      * @return
      *     possible object is
-     *     {@link DeploymentStatus }
+     *     {@link String }
      *     
      */
-    public DeploymentStatus getStatusOfDeployment() {
+    public String getStatusOfDeployment() {
         return statusOfDeployment;
     }
 
@@ -234,10 +237,10 @@ public class TemplatePayload {
      * 
      * @param value
      *     allowed object is
-     *     {@link DeploymentStatus }
+     *     {@link String }
      *     
      */
-    public void setStatusOfDeployment(DeploymentStatus value) {
+    public void setStatusOfDeployment(String value) {
         this.statusOfDeployment = value;
     }
 

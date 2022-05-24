@@ -6,10 +6,11 @@
 //
 
 
-package uk.co.argon.cdm;
+package uk.co.argon.cdm.radarlive.scribe.metadatarequest;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -38,6 +39,7 @@ import javax.xml.bind.annotation.XmlType;
     "key",
     "value"
 })
+@XmlRootElement(name="KeyValueVO")
 public class KeyValueVO {
 
     protected String key;

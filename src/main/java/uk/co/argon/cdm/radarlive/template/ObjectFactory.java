@@ -37,19 +37,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Section }
+     * Create an instance of {@link MigrationSection }
      * 
      */
-    public Section createSection() {
-        return new Section();
+    public MigrationSection createSection() {
+        return new MigrationSection();
     }
 
     /**
-     * Create an instance of {@link Moderator }
+     * Create an instance of {@link MigrationModerator }
      * 
      */
-    public Moderator createModerator() {
-        return new Moderator();
+    public MigrationModerator createModerator() {
+        return new MigrationModerator();
     }
 
     /**

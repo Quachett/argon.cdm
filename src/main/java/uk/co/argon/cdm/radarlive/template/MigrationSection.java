@@ -15,17 +15,18 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for Moderator complex type.
+ * <p>Java class for Section complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="Moderator"&gt;
+ * &lt;complexType name="Section"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="moderatorType" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="transactionType" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="sectionName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="sectionCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="typeId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="oldModel" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="newModel" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
@@ -37,67 +38,93 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Moderator", propOrder = {
-    "moderatorType",
-    "transactionType",
+@XmlType(name = "Section", propOrder = {
+    "sectionName",
+    "sectionCode",
+    "typeId",
     "oldModel",
     "newModel"
 })
-public class Moderator {
+public class MigrationSection {
 
     @XmlElement(required = true)
-    protected String moderatorType;
+    protected String sectionName;
     @XmlElement(required = true)
-    protected String transactionType;
+    protected String sectionCode;
+    protected String typeId;
     protected String oldModel;
     protected String newModel;
 
     /**
-     * Gets the value of the moderatorType property.
+     * Gets the value of the sectionName property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getModeratorType() {
-        return moderatorType;
+    public String getSectionName() {
+        return sectionName;
     }
 
     /**
-     * Sets the value of the moderatorType property.
+     * Sets the value of the sectionName property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setModeratorType(String value) {
-        this.moderatorType = value;
+    public void setSectionName(String value) {
+        this.sectionName = value;
     }
 
     /**
-     * Gets the value of the transactionType property.
+     * Gets the value of the sectionCode property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getTransactionType() {
-        return transactionType;
+    public String getSectionCode() {
+        return sectionCode;
     }
 
     /**
-     * Sets the value of the transactionType property.
+     * Sets the value of the sectionCode property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setTransactionType(String value) {
-        this.transactionType = value;
+    public void setSectionCode(String value) {
+        this.sectionCode = value;
+    }
+
+    /**
+     * Gets the value of the typeId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getTypeId() {
+        return typeId;
+    }
+
+    /**
+     * Sets the value of the typeId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setTypeId(String value) {
+        this.typeId = value;
     }
 
     /**

@@ -6,11 +6,13 @@
 //
 
 
-package uk.co.argon.cdm;
+package uk.co.argon.cdm.radarlive.scribe.metadatarequest;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
+
+import jakarta.xml.bind.annotation.XmlElement;
 
 
 /**
@@ -42,6 +44,7 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class MetadataRequest {
 
+	@XmlElement(name="property")
     protected MetadataList metadata;
     protected TableList tables;
     protected String overlay;
@@ -55,6 +58,8 @@ public class MetadataRequest {
      *     
      */
     public MetadataList getMetadata() {
+    	if(metadata==null)
+    		metadata= new MetadataList();
         return metadata;
     }
 
@@ -79,6 +84,8 @@ public class MetadataRequest {
      *     
      */
     public TableList getTables() {
+    	if(tables==null)
+    		tables = new TableList();
         return tables;
     }
 

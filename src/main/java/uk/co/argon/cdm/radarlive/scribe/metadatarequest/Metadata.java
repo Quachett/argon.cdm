@@ -6,14 +6,17 @@
 //
 
 
-package uk.co.argon.cdm;
+package uk.co.argon.cdm.radarlive.scribe.metadatarequest;
 
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+
+import jakarta.xml.bind.annotation.XmlElement;
 
 
 /**
@@ -49,6 +52,7 @@ import javax.xml.bind.annotation.XmlType;
     "dropdownValue",
     "image"
 })
+@XmlRootElement(name="property")
 public class Metadata {
 
     protected List<KeyValueVO> dropdownValue;
@@ -69,8 +73,20 @@ public class Metadata {
     protected Boolean textArea;
     @XmlAttribute(name = "tooltip")
     protected String tooltip;
+    
+    
 
-    /**
+	public Metadata() {
+		super();
+	}
+
+	public Metadata(String key, String value) {
+		super();
+		this.key = key;
+		this.value = value;
+	}
+
+	/**
      * Gets the value of the dropdownValue property.
      * 
      * <p>

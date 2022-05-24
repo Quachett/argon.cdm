@@ -6,7 +6,7 @@
 //
 
 
-package uk.co.argon.cdm;
+package uk.co.argon.cdm.radarlive.scribe.metadatarequest;
 
 import javax.xml.bind.annotation.XmlRegistry;
 

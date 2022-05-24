@@ -6,4 +6,4 @@
 //
 
 @javax.xml.bind.annotation.XmlSchema(namespace = "http://synapse.ominsure.co.za/webservice/scribe", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
-package uk.co.argon.cdm;
+package uk.co.argon.cdm.radarlive.scribe.metadatarequest;

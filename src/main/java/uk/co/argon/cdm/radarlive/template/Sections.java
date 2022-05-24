@@ -40,7 +40,7 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class Sections {
 
-    protected List<Section> section;
+    protected List<MigrationSection> section;
 
     /**
      * Gets the value of the section property.
@@ -60,13 +60,13 @@ public class Sections {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Section }
+     * {@link MigrationSection }
      * 
      * 
      */
-    public List<Section> getSection() {
+    public List<MigrationSection> getSection() {
         if (section == null) {
-            section = new ArrayList<Section>();
+            section = new ArrayList<MigrationSection>();
         }
         return this.section;
     }

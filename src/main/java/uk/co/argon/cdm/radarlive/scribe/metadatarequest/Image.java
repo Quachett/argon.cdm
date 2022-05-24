@@ -6,10 +6,11 @@
 //
 
 
-package uk.co.argon.cdm;
+package uk.co.argon.cdm.radarlive.scribe.metadatarequest;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -44,6 +45,7 @@ import javax.xml.bind.annotation.XmlType;
     "width",
     "height"
 })
+@XmlRootElement(name="image")
 public class Image {
 
     protected String base64Data;

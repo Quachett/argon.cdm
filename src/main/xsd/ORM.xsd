@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="http://argon.co.uk/orm" xmlns:tns="http://argon.co.uk/orm">
+
+    <xs:complexType name="Artist">
+        <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element minOccurs="0" name="bio" type="xs:string"/>
+            <xs:element minOccurs="0" name="createdDate" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Customer">
+        <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+            <xs:element name="firstname" type="xs:string"/>
+            <xs:element minOccurs="1" name="lastname" type="xs:string"/>
+            <xs:element minOccurs="0" name="email" type="xs:string"/>
+            <xs:element minOccurs="0" name="createdDate" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

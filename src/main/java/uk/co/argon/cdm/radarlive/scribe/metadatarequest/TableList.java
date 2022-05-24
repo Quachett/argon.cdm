@@ -6,13 +6,16 @@
 //
 
 
-package uk.co.argon.cdm;
+package uk.co.argon.cdm.radarlive.scribe.metadatarequest;
 
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+
+import jakarta.xml.bind.annotation.XmlElement;
 
 
 /**
@@ -35,11 +38,12 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TableList", propOrder = {
+@XmlType(name = "", propOrder = {
     "table"
 })
+@XmlRootElement(name = "tables")
 public class TableList {
-
+	@XmlElement
     protected List<Table> table;
 
     /**
