@@ -30,12 +30,12 @@ public class TemplateSectionFactory {
 
 		col = new TableColumn();
 		col.setIndex(3);
-		col.setValue(CommonsUtil.getSerialisedObj(section.getCurrentModel()));
+		col.setValue(CommonsUtil.getGson().toJson(section.getCurrentModel()));
 		row.getColumn().add(col);
 
 		col = new TableColumn();
 		col.setIndex(3);
-		col.setValue(CommonsUtil.getSerialisedObj(section.getNewModel()));
+		col.setValue(CommonsUtil.getGson().toJson(section.getNewModel()));
 		row.getColumn().add(col);
 		
 		row.setIndex(i++);
@@ -60,12 +60,12 @@ public class TemplateSectionFactory {
 
 		col = new TableColumn();
 		col.setIndex(2);
-		col.setValue(CommonsUtil.getSerialisedObj(moderator.getCurrentModel()));
+		col.setValue(CommonsUtil.getGson().toJson(moderator.getCurrentModel()));
 		row.getColumn().add(col);
 
 		col = new TableColumn();
 		col.setIndex(3);
-		col.setValue(CommonsUtil.getSerialisedObj(moderator.getNewModel()));
+		col.setValue(CommonsUtil.getGson().toJson(moderator.getNewModel()));
 		row.getColumn().add(col);
 
 		row.setIndex(j++);

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="http://synapse.ominsure.co.za/internal/lucene/backend/vo"
+    xmlns:tns="http://synapse.ominsure.co.za/internal/lucene/backend/vo">
+
+    <xs:simpleType name="DataType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="String"/>
+            <xs:enumeration value="Timestamp"/>
+            <xs:enumeration value="Numeric"/>
+            <xs:enumeration value="Clob"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="ColumnInfo">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="dataType" type="tns:DataType"/>
+            <xs:element minOccurs="0" name="value" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="TableInfo">
+        <xs:sequence>
+            <xs:element name="schema" type="xs:string"/>
+            <xs:element name="table" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="IndexingDoc">
+        <xs:sequence>
+            <xs:element maxOccurs="1" name="keyInfo" type="tns:ColumnInfo"/>
+            <xs:element maxOccurs="unbounded" name="columnInfo" type="tns:ColumnInfo"/>
+            <xs:element minOccurs="0" name="tableInfo" type="tns:TableInfo"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="IndexingDocs">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="documentInfo"
+                type="tns:IndexingDoc"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
